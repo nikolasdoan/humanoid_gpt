@@ -23,7 +23,7 @@ elevenlabs.set_api_key(os.getenv("ELEVENLABS_API_KEY"))
 RECORDING_PATH = os.getenv("RECORDING_PATH")
 RESPONSE_PATH = os.getenv("RESPONSE_PATH")
 
-def openai_tts(text, filename="audio.wav", model="tts-1", voice="alloy"):
+def openai_tts(text, filename="output.wav", model="tts-1", voice="alloy"):
     response = client.audio.speech.create(
         model=model,
         voice=voice,
@@ -211,3 +211,30 @@ def play_audio(filename):
     mixer.quit()
 
 
+
+
+
+# On macOS, you can play a variety of system sounds using built-in terminal commands. Here are a few ways you can trigger sounds using `osascript` or `afplay`:
+
+# import os
+
+# # Play the default system sound using afplay
+# os.system('afplay /System/Library/Sounds/Glass.aiff')
+
+# ### Available Sounds on macOS:
+# macOS comes with a few system sounds located at `/System/Library/Sounds`. Some of the available sounds include:
+# - **Glass.aiff**
+# - **Sosumi.aiff**
+# - **Basso.aiff**
+# - **Blow.aiff**
+# - **Frog.aiff**
+# - **Hero.aiff**
+# - **Pop.aiff**
+# - **Ping.aiff**
+  
+# You can replace the sound file in the `afplay` command with any of these to play a different sound.
+
+# ### Example to List All Sounds:
+# ```bash
+# ls /System/Library/Sounds
+# ```

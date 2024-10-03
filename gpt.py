@@ -7,6 +7,7 @@ import re
 from audio import record_audio, speech_to_text, openai_tts, elevenlabs_tts, play_audio
 
 import openai
+
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
 with open(os.path.join(os.path.dirname(__file__), "system_prompt.txt"), "r") as file:
@@ -27,7 +28,7 @@ while True:
     messages.append ({"role": "user", "content": content})
     completion = openai.chat.completions.create(
         model="gpt-3.5-turbo", 
-        model="gpt-o1-2022-06-30", 
+        # model="gpt-o1-2022-06-30", 
         messages=messages,
         max_tokens=200, 
         temperature=0.1
@@ -42,13 +43,13 @@ while True:
     print(f'Dustin: {chat_response}')
     messages.append ({"role": "assistant", "content": chat_response})
 
-    with open(os.path.join(os.path.dirname(__file__), "temp.txt"), "r") as file: info_update = file.read()
-    messages.append ({"role": "assistant", "content": info_update})
+    # with open(os.path.join(os.path.dirname(__file__), "temp.txt"), "r") as file: info_update = file.read()
+    # messages.append ({"role": "assistant", "content": info_update})
 
 
     openai_tts(chat_response)
     # elevenlabs_tts(chat_response)
-    play_audio("audio.wav")
+    play_audio("output.wav")
 
 
 
