@@ -3,3 +3,4 @@ openai
 pygame
 sounddevice
 wave
+numpy

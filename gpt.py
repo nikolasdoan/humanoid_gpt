@@ -5,6 +5,7 @@ import threading
 import re
 from audio import record_audio, speech_to_text, text_to_speech, play_audio
 import openai
+os.load_dotenv()
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
 with open(os.path.join(os.path.dirname(__file__), "system_prompt.txt"), "r") as file:
@@ -13,7 +14,7 @@ with open(os.path.join(os.path.dirname(__file__), "system_prompt.txt"), "r") as 
 
 while True:
     # content = input("User: ") keyboard input
-    
+
     chime_1 = threading.Thread(target=lambda: os.system('afplay /System/Library/Sounds/Blow.aiff'))
     chime_1.start()
 
@@ -25,6 +26,7 @@ while True:
     messages.append ({"role": "user", "content": content})
     completion = openai.chat.completions.create(
         model="gpt-3.5-turbo", 
+        # model="gpt-o1-2022-06-30", 
         messages=messages,
         max_tokens=200, 
         temperature=0.1
@@ -43,6 +45,7 @@ while True:
     # messages.append ({"role": "assistant", "content": info_update})
 
     text_to_speech(chat_response)
+    # elevenlabs_tts(chat_response
     play_audio("output.wav")
 
 

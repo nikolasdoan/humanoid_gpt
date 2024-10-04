@@ -5,6 +5,7 @@ from pygame import mixer
 import wave
 import openai 
 from openai import OpenAI
+os.load_dotenv()
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 def record_audio(duration=5, sample_rate=16000):
