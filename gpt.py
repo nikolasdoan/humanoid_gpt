@@ -1,10 +1,9 @@
 import os 
 from os import environ
 environ['PYGAME_HIDE_SUPPORT_PROMPT'] = '1'
-
 import threading
 import re
-from audio import record_audio, speech_to_text, openai_tts, elevenlabs_tts, play_audio
+from audio import record_audio, speech_to_text, openai_tts, play_audio
 
 import openai
 
@@ -45,7 +44,6 @@ while True:
 
     # with open(os.path.join(os.path.dirname(__file__), "temp.txt"), "r") as file: info_update = file.read()
     # messages.append ({"role": "assistant", "content": info_update})
-
 
     openai_tts(chat_response)
     # elevenlabs_tts(chat_response)
