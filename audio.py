@@ -3,16 +3,11 @@ import sounddevice as sd
 import pygame
 from pygame import mixer
 import wave
-
 import openai 
 from openai import OpenAI
-from deepgram import Deepgram
-
 from dotenv import load_dotenv
 load_dotenv()
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
-deepgram = Deepgram(os.getenv("DEEPGRAM_API_KEY"))
-
 
 def record_audio(duration=5, sample_rate=16000):
     print("Listening...")
@@ -37,7 +32,7 @@ def speech_to_text(wav_file_path):
     print(transcription.text)
     return transcription.text
 
-def openai_tts(text, filename="output.wav", model="tts-1", voice="alloy"):
+def text_to_speech(text, filename="output.wav", model="tts-1", voice="alloy"):
     response = client.audio.speech.create(
         model=model,
         voice=voice,
