@@ -5,14 +5,13 @@ from pygame import mixer
 import wave
 import openai 
 from openai import OpenAI
-os.load_dotenv()
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 def record_audio(duration=5, sample_rate=16000):
     print("Listening...")
     recording = sd.rec(int(duration * sample_rate), samplerate=sample_rate, channels=1, dtype='int16')
     sd.wait()
-    file_path = 'recording.wav'
+    file_path = './audio_files/recording.wav'
     wf = wave.open(file_path, 'wb')
     wf.setnchannels(1)
     wf.setsampwidth(2)  # 16-bit audio
@@ -26,12 +25,12 @@ def speech_to_text(wav_file_path):
         transcription = openai.audio.transcriptions.create(
             model="whisper-1", 
             file=audio_file, 
-            prompt="There are only two language spoken and can be spoken: English and Traditional Chinese."
+            prompt="There are only two language spoken and can be spoken: English and Traditional Chinese (Taiwan) (zh_tw)."
         )
     print(transcription.text)
     return transcription.text
 
-def text_to_speech(text, filename="output.wav", model="tts-1", voice="alloy"):
+def text_to_speech(text, filename="./audio_files/output.wav", model="tts-1", voice="alloy"):
     response = client.audio.speech.create(
         model=model,
         voice=voice,
