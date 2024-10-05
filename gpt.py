@@ -5,6 +5,8 @@ import threading
 import re
 from audio import record_audio, speech_to_text, text_to_speech, play_audio
 import openai
+from dotenv import load_dotenv
+load_dotenv()
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
 with open(os.path.join(os.path.dirname(__file__), "system_prompt.txt"), "r") as file:
