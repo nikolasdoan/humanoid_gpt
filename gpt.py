@@ -16,12 +16,12 @@ with open(os.path.join(os.path.dirname(__file__), "system_prompt.txt"), "r") as 
 while True:
     # content = input("User: ") keyboard input
 
-    chime_1 = threading.Thread(target=lambda: os.system('aplay ./audio_files/init.wav'))
+    chime_1 = threading.Thread(target=lambda: os.system('afplay ./audio_files/init.wav'))
     chime_1.start()
 
     content = speech_to_text(record_audio()) # speech input
 
-    chime_2 = threading.Thread(target=lambda: os.system('aplay ./audio_files/conf.wav'))
+    chime_2 = threading.Thread(target=lambda: os.system('afplay ./audio_files/conf.wav'))
     chime_2.start()
 
     messages.append ({"role": "user", "content": content})
