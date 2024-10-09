@@ -41,12 +41,6 @@ def text_to_speech(text, filename="./audio_files/output.wav", model="tts-1", voi
     response.stream_to_file(filename)
 
 def play_audio(filename):
-    """
-    Play an audio file using Pygame.
-
-    Args:
-        filename (str): The filename of the audio file to play.
-    """
     mixer.init()
     print("Playing audio response...")
     sound = mixer.Sound(str(filename))
@@ -62,7 +56,7 @@ def play_audio(filename):
 # import os
 
 # # Play the default system sound using afplay
-# os.system('afplay /System/Library/Sounds/Glass.aiff')
+# os.system('afplay /System/Library/Sounds/Blow.aiff')
 
 # ### Available Sounds on macOS:
 # macOS comes with a few system sounds located at `/System/Library/Sounds`. Some of the available sounds include:
