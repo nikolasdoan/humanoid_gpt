@@ -9,12 +9,12 @@ environ['PYGAME_HIDE_SUPPORT_PROMPT'] = '1'
 server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 # Bind the socket to the address and port
-server_address = ('0.0.0.0', 5000)  # Listen on all interfaces
+server_address = ('192.168.1.87', 6666)  # Listen on all interfaces
 server_socket.bind(server_address)
 
 # Listen for incoming connections
 server_socket.listen(1)
-print("Server is listening on port 5000...")
+print("Server is listening on port 6666...")
 
 def signal_handler(sig, frame):
     print("Interrupt received, shutting down...")

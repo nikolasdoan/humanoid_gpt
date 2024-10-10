@@ -10,7 +10,7 @@ load_dotenv()
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
 
-with open(os.path.join(os.path.dirname(__file__), "prompt2.txt"), "r") as file:
+with open(os.path.join(os.path.dirname(__file__), "prompt_pseudo.txt"), "r") as file:
     system_prompt = file.read()
     messages = [{"role": "system", "content": system_prompt}]
 
