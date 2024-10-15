@@ -8,7 +8,7 @@ from gpt import run_gpt
 client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 # Connect to the server
-server_address = ('192.168.1.87', 6666)
+server_address = ('192.168.1.70', 6666)
 client_socket.connect(server_address)
 
 def signal_handler(sig, frame):
@@ -27,7 +27,7 @@ try:
         if data:
             received_text = data.decode()
             print(f"Received: {received_text}")
-            if received_text == 'Dustin waiting':
+            if received_text == 'Oliver waiting':
                 client_socket.sendall(str("0").encode())  # Send 0 as handshake back to the server
             if received_text == 'start GPT task':
                 control_number = run_gpt()

@@ -44,7 +44,7 @@ def run_gpt():
             chat_response = re.sub(r'\{\d+\}', '', chat_response)
         else:
             control_number = 0
-        print(f'Dustin: {chat_response}')
+        print(f'Oliver: {chat_response}')
         messages.append ({"role": "assistant", "content": chat_response})
 
         text_to_speech(chat_response)
