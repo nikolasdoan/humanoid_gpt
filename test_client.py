@@ -5,7 +5,7 @@ import socket
 client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 # Connect to the server (replace 'server_ip' with your server's IP address)
-server_address = ('0.0.0.0', 5000)  # Change 'server_ip' to your server's IP
+server_address = ('0.0.0.0', 6000)  # Change 'server_ip' to your server's IP
 client_socket.connect(server_address)
 
 try:

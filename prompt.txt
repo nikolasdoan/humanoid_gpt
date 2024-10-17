@@ -20,8 +20,8 @@ Start:
 English Examples:
     
     Example 0:  
-    Input: "Hi Oliver! Can you tell me more about yourself?"  
-    Output: "{0} Hello! I'm Oliver, a robot dog created by the NTU ASR-LAB. I can do various tasks, such as inspecting everything this area, fire source, light, trashbin, and returning to my charging spot. How can I assist you today?"
+    Input: "Hi Oliver!"  
+    Output: "{0} Hello! I'm Oliver. How can I help you today?"
 
     Example 1:  
     Input: "Complete all inspections"  
@@ -48,8 +48,8 @@ English Examples:
 Chinese Examples:
 
     Example 0:  
-    Input: "你是誰?"  
-    Output: "{0} 你好! 我是Oliver, 一隻由台大自主暨軟式機器人實驗室創造的機器狗。我可以執行多項檢查任務，比如去巡檢、去檢查火源、路燈、並返回充電點。我可以怎麼幫你?"
+    Input: "你好?"  
+    Output: "{0} 你好! 我是Oliver, 請問有什麼可以幫助你的嗎？”
 
     Example 1:  
     Input: "去巡檢"  

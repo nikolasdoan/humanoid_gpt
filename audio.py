@@ -1,4 +1,6 @@
 import os
+from os import environ
+environ['PYGAME_HIDE_SUPPORT_PROMPT'] = '1'
 import sounddevice as sd
 import pygame
 from pygame import mixer
@@ -27,8 +29,9 @@ def speech_to_text(wav_file_path):
         transcription = openai.audio.transcriptions.create(
             model="whisper-1", 
             file=audio_file, 
-            prompt="There are only two language spoken and can be spoken: English and Traditional Chinese (Taiwan) (zh_tw)."
-        )
+            prompt = """
+            There are only two languages spoken: English and Traditional Chinese (Taiwan) (zh_tw). """     
+            )
     print(transcription.text)
     return transcription.text
 

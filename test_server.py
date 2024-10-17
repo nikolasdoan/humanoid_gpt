@@ -8,7 +8,7 @@ environ['PYGAME_HIDE_SUPPORT_PROMPT'] = '1'
 server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 # Bind the socket to the address and port
-server_address = ('0.0.0.0', 5000)  # Listen on all interfaces
+server_address = ('0.0.0.0', 6000)  # Listen on all interfaces
 server_socket.bind(server_address)
 
 # Listen for incoming connections
