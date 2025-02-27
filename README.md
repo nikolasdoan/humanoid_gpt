@@ -23,7 +23,6 @@ sudo apt-get install python3-dev
 
 pip install pyaudio
 
-# navigate to gpt folder
 pip install -r requirements.txt
 
 
