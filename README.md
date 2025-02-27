@@ -23,9 +23,7 @@ sudo apt-get install python3-dev
 
 pip install pyaudio
 
-# navigate to gpt folder
-pip install -r requirements.txt
-
+pip install -r requirements.txt 
 
 # create .env file for API key in the dustin-gpt folder
 echo "OPENAI_API_KEY=your-secret-api-key" > .env
