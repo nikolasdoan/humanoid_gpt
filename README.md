@@ -11,9 +11,9 @@ python --version
 
 sudo apt install python3.8-venv
 
-python -m venv gpt
+python -m venv h_gpt
 
-source gpt/bin/activate
+source h_gpt/bin/activate
 
 # install dependencies
 
