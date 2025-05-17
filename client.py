@@ -53,7 +53,7 @@ class Client:
 
     def connect(self):
         self.client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        server_address = ('192.168.1.25', 55635)
+        server_address = ('192.168.1.87', 55635)
         print(f"Connecting to {server_address}...")
         
         try:
