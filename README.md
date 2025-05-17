@@ -32,6 +32,7 @@ echo "OPENAI_API_KEY=your-secret-api-key" > .env
 python client.py
 
 // press G to start GPT
+
 // press Q to quit the program
 
 
