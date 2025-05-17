@@ -29,10 +29,10 @@ pip install -r requirements.txt
 echo "OPENAI_API_KEY=your-secret-api-key" > .env
 
 # run the main file
-python gpt.py
+python client.py
 
-# run the test server
-python test_server.py
+# press G to start GPT
+# press Q to quit the program
 
-# run the test client
-python test_client.py
+
+
