@@ -45,7 +45,8 @@ def decode_response(response):
 client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 # Connect to the server
-server_address = ('0.0.0.0', 6000)
+# Use localhost for testing instead of 0.0.0.0
+server_address = ('127.0.0.1', 6000)
 print(f"1. Client connecting to {server_address}")
 client_socket.connect(server_address)
 

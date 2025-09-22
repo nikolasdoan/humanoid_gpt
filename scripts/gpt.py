@@ -10,7 +10,21 @@ load_dotenv()
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
 
-with open(os.path.join(os.path.dirname(__file__), "prompt.txt"), "r") as file:
+def resolve_prompt_path():
+    """Return an absolute path to the root-level prompt.txt with fallbacks."""
+    # Primary: ../prompt.txt relative to this file
+    primary_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "prompt.txt"))
+    if os.path.exists(primary_path):
+        return primary_path
+    # Fallback: prompt.txt relative to CWD
+    cwd_path = os.path.abspath(os.path.join(os.getcwd(), "prompt.txt"))
+    if os.path.exists(cwd_path):
+        return cwd_path
+    # Last resort: use file next to this module (if present)
+    local_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "prompt.txt"))
+    return local_path
+
+with open(resolve_prompt_path(), "r") as file:
     system_prompt = file.read()
     messages = [{"role": "system", "content": system_prompt}]
 
@@ -44,7 +58,7 @@ def run_gpt():
             chat_response = re.sub(r'\{\d+\}', '', chat_response)
         else:
             control_number = 0
-        print(f'Oliver: {chat_response}')
+        print(f'NTU Humanoid: {chat_response}')
         messages.append ({"role": "assistant", "content": chat_response})
 
         text_to_speech(chat_response)

@@ -1,38 +1,36 @@
-# run this in order
+# 1.A create conda environment
 
 conda create --name h_gpt python=3.8
 
 conda activate h_gpt 
 
-# if no conda available
+# 1.B if no conda available
 
 python --version
 >>Python 3.8.10
 
 sudo apt install python3.8-venv
 
-python -m venv gpt
+python -m venv h_gpt
 
-source gpt/bin/activate
+source h_gpt/bin/activate
 
-# install dependencies
-
-sudo apt-get install portaudio19-dev
-
-sudo apt-get install python3-dev
-
-pip install pyaudio
+# 2. install dependencies
 
 pip install -r requirements.txt 
 
-# create .env file for API key in the dustin-gpt folder
-echo "OPENAI_API_KEY=your-secret-api-key" > .env
+# 3. config API key (in humanoid_gpt folder)  
+echo "OPENAI_API_KEY=your-secret-api-key" > .env 
 
-# run the main file
-python gpt.py
+# 4. configure remote robot server (optional overrides)
+echo "SERVER_HOST=192.168.x.xx" >> .env
+echo "SERVER_PORT=yyyy" >> .env
 
-# run the test server
-python test_server.py
+# 5. local test pair (binary protocol)
+python scripts/test_server.py
+# in another terminal
+python scripts/test_client.py
 
-# run the test client
-python test_client.py
+# 6. run the internet-facing client
+python humanoid_client.py
+
