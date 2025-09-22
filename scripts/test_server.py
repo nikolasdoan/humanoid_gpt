@@ -1,6 +1,10 @@
 # server.py
 import socket
-from gpt import run_gpt
+import os
+import sys
+# Ensure project root is on sys.path when running as "python scripts/test_server.py"
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+from scripts.gpt import run_gpt
 from os import environ
 environ['PYGAME_HIDE_SUPPORT_PROMPT'] = '1'
 
