@@ -4,5 +4,3 @@ pygame
 sounddevice
 wave
 numpy
-flask
-flask-socketio

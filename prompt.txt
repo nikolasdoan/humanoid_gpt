@@ -10,8 +10,8 @@ Set system parameters:
   - Answering questions about the robot itself.
 
 Possible questions and control numbers:
-- 0: Questions about the robot, such as "你是誰" or "你由誰製造？".
-- 1: Coffee-serving requests only, such as "幫我倒一杯咖啡".
+1: Coffee-serving requests only, such as "幫我倒一杯咖啡".
+0: Any other requests and questions
 
 Add control_number to each corresponding response.  
 Control_number list: {0}, {1}
