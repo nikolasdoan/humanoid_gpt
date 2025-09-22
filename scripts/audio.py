@@ -30,7 +30,7 @@ def speech_to_text(wav_file_path):
             model="whisper-1", 
             file=audio_file, 
             prompt = """去巡檢
-            There are only 1 language spoken: sTraditional Chinese (Taiwan) (zh_tw). """     
+            There are only 1 language spoken: Traditional Chinese (Taiwan) (zh_tw). """     
             )
     print(transcription.text)
     return transcription.text

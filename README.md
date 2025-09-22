@@ -31,6 +31,9 @@ python scripts/test_server.py
 # in another terminal
 python scripts/test_client.py
 
-# 6. run the internet-facing client
-python humanoid_client.py
+# 6. run the TPC/IP server on the robot
+python humanoid_server.py
+
+# run the TPC/IP client
+python scripts/humanoid_client.py
 
