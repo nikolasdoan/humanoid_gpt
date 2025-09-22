@@ -1,4 +1,4 @@
-from audio import record_audio, speech_to_text, text_to_speech, play_audio
+from scripts.audio import record_audio, speech_to_text, text_to_speech, play_audio
 import os 
 from os import environ
 environ['PYGAME_HIDE_SUPPORT_PROMPT'] = '1'
